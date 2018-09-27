@@ -1,20 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detalhes</ion-title>
+  <ion-toolbar> 
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Detalhes do professor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col>
-        {{data.nome}}
+      <ion-col col-md-4 align-self-center>
+          <ion-avatar>
+            <ion-img [src]="data?.imagem"></ion-img>
+           </ion-avatar>
       </ion-col>
-      <ion-col>
-        2 of 3
+      <ion-col align-self-center>
+          <h2>{{data?.sobrenome}}, <b>{{data?.nome}}</b></h2>
       </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col>
-        3 of 3
+        {{data?.texto}}
       </ion-col>
     </ion-row>
   </ion-grid>
