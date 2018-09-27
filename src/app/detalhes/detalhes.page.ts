@@ -16,7 +16,7 @@ export class DetalhesPage implements OnInit {
     this.service
     .getDados('dados/' + this.service.id)
     .subscribe(data => {
-      this.data = data.json()[0];
+      this.data = data.json();
       console.log(this.data);
     });
 
