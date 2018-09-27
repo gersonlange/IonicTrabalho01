@@ -1,3 +1,4 @@
+import { AuthService } from './../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesPage implements OnInit {
 
-  constructor() { }
+  data: any;
+
+  constructor(private service: AuthService) { }
 
   ngOnInit() {
+    this.service
+    .getDados('dados/' + this.service.id)
+    .subscribe(data => {
+      this.data = data.json()[0];
+      console.log(this.data);
+    });
+
   }
 
 }

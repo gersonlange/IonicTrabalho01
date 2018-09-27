@@ -21,6 +21,11 @@ export class HomePage implements OnInit{
       });
   }
 
+  detalhes(id) {
+    this.service.id = id;
+    this.route.navigateByUrl('detalhes');
+  }
+
   backToWelcome() {
     this.route.navigateByUrl('login');
   }

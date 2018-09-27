@@ -8,6 +8,8 @@ const apiUrl = 'http://private-068ee-ionic2.apiary-mock.com/';
 })
 export class AuthService {
 
+  id;
+
   constructor(public http: Http) {}
 
   postData(credentials, type) {
